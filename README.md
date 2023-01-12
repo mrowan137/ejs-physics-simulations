@@ -1,7 +1,7 @@
 # EJS physics simulations
 
-Collection of elementary physics examples made with EJS (Easy Java Simulations,
-v4.0).
+Collection of elementary mechanics simulations made with EJS (Easy Java
+Simulations, v4.0).
 
 | Newton's first law                                                                                | Block sliding down a ramp                                                                | Projectile motion                                                                               |
 |:-------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
