@@ -1,0 +1,244 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.0">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Elastic collision between two equal masses
+    </p>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[vx1]]></Name>
+<Value><![CDATA[-.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx2]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[c]]></Name>
+<Value><![CDATA[.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x1]]></Name>
+<Value><![CDATA[.9]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x2]]></Name>
+<Value><![CDATA[-.9]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[a]]></Name>
+<Value><![CDATA[vx1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[b]]></Name>
+<Value><![CDATA[vx2]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<IndependentVariable>t</IndependentVariable>
+<Increment>0.05</Increment>
+<Rate state="x1">vx1</Rate>
+<Rate state="x2">vx2</Rate>
+<Method>MidPoint</Method>
+<Tolerance>0.001</Tolerance>
+<Comment><![CDATA[]]></Comment>
+<Events><Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Event</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if (x2>=(x1-.2)) 
+ {
+    vx1=a;
+    vx2=b;
+    vx1=b;
+    vx2=a;
+  }
+return 1.0;
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<Action><![CDATA[
+
+
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+</Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["Collision between two bodies of equal mass"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["81,117"]]></Property>
+<Property name="size"><![CDATA[300,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">particle</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x1]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[.2]]></Property>
+<Property name="sizey"><![CDATA[.2]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">particle2</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x2]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[.2]]></Property>
+<Property name="sizey"><![CDATA[.2]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA[Play]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA[Pause]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

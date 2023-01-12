@@ -1,0 +1,261 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.0">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      Pendulum
+    </p>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>20</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>1</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[.05]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[theta]]></Name>
+<Value><![CDATA[Math.PI/4]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[omega]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[h]]></Name>
+<Value><![CDATA[.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[9.8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[tFall]]></Name>
+<Value><![CDATA[Math.PI/4*Math.sqrt(h/g)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[Math.cos(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[Math.sin(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[m]]></Name>
+<Value><![CDATA[1]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[-tFall*Math.sin(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[tFall*Math.cos(theta)]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<IndependentVariable>t</IndependentVariable>
+<Increment>0.05</Increment>
+<Rate state="omega">-g/h * Math.sin(theta)</Rate>
+<Rate state="theta">omega</Rate>
+<Method>MidPoint</Method>
+<Tolerance>0.001</Tolerance>
+<Comment><![CDATA[]]></Comment>
+<Events></Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+<Osejs.Model.Constraints.Page>
+<Type>CODE_EDITOR</Type>
+<Name>FixRel Page</Name>
+<Active>true</Active>
+<Content>
+<Comment><![CDATA[]]></Comment>
+<Code><![CDATA[
+
+x =   h * Math.sin(theta);
+y = - h * Math.cos(theta);
+
+
+
+]]></Code>
+
+</Content>
+</Osejs.Model.Constraints.Page>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA[Frame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="size"><![CDATA[300,300]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.DrawingPanel</Type>
+<Property name="name">drawingPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[false]]></Property>
+<Property name="autoscaleY"><![CDATA[false]]></Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-1.0]]></Property>
+<Property name="maximumY"><![CDATA[1.0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Particle</Type>
+<Property name="name">particle</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[x]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="enabled"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow</Type>
+<Property name="name">arrow</Property>
+<Property name="parent">drawingPanel</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[0]]></Property>
+<Property name="sizex"><![CDATA[x]]></Property>
+<Property name="sizey"><![CDATA[y]]></Property>
+<Property name="enabledSecondary"><![CDATA[false]]></Property>
+<Property name="enabled"><![CDATA[false]]></Property>
+<Property name="style"><![CDATA[SEGMENT]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA[Play]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA[Pause]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">aField</Property>
+<Property name="parent">buttonsPanel</Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>

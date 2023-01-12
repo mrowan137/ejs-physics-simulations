@@ -1,0 +1,389 @@
+<!-- This XML file has been created by Easy Java Simulations (Ejs). Visit http://www.um.es/fem/Ejs. -->
+<!-- Please, save the file to your hard disk on your Ejs' user directory and open it with Ejs. -->
+<Osejs version="4.0">
+<Osejs.Information>
+<Title><![CDATA[]]></Title>
+<Author><![CDATA[]]></Author>
+<Keywords><![CDATA[]]></Keywords>
+<Level><![CDATA[]]></Level>
+<Language><![CDATA[]]></Language>
+<Abstract><![CDATA[]]></Abstract>
+<AdditionalLibraries>
+</AdditionalLibraries>
+<ImportStatements>
+</ImportStatements>
+<AuxiliaryFiles><![CDATA[]]></AuxiliaryFiles>
+<DetectedFiles><![CDATA[]]></DetectedFiles>
+</Osejs.Information>
+<Osejs.Description>
+<Osejs.Description.Page>
+<Type>DESCRIPTION_EDITOR</Type>
+<Name>Intro Page</Name>
+<Active>true</Active>
+<Content>
+<![CDATA[
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      FallingBall3D
+    </p>
+  </body>
+</html>
+
+]]>
+
+</Content>
+</Osejs.Description.Page>
+</Osejs.Description>
+<Osejs.Model>
+<Osejs.Model.FramesPerSecond>25</Osejs.Model.FramesPerSecond>
+<Osejs.Model.StepsPerDisplay>4</Osejs.Model.StepsPerDisplay>
+<Osejs.Model.Autostart>false</Osejs.Model.Autostart>
+<Osejs.Model.Variables>
+<Osejs.Model.Variables.Page>
+<Type>VARIABLE_EDITOR</Type>
+<Name>Var Table</Name>
+<Active>true</Active>
+<Content>
+<PageComment><![CDATA[]]></PageComment>
+<Variable>
+<Name><![CDATA[x]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[y]]></Name>
+<Value><![CDATA[1.5]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vx]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[vy]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[t]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[dt]]></Name>
+<Value><![CDATA[0]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[g]]></Name>
+<Value><![CDATA[9.8]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+<Variable>
+<Name><![CDATA[CoefficientOfRestitution]]></Name>
+<Value><![CDATA[0.86194]]></Value>
+<Type><![CDATA[double]]></Type>
+<Dimension><![CDATA[]]></Dimension>
+<Comment><![CDATA[]]></Comment>
+</Variable>
+
+</Content>
+</Osejs.Model.Variables.Page>
+</Osejs.Model.Variables>
+<Osejs.Model.Initialization>
+</Osejs.Model.Initialization>
+<Osejs.Model.Evolution>
+<Osejs.Model.Evolution.Page>
+<Type>ODE_EDITOR</Type>
+<Name>Evol Page</Name>
+<Active>true</Active>
+<Content>
+<IndependentVariable>t</IndependentVariable>
+<Increment>.02</Increment>
+<Rate state="vy">-g</Rate>
+<Rate state="y">vy</Rate>
+<Method>MidPoint</Method>
+<Tolerance>0.001</Tolerance>
+<Comment><![CDATA[]]></Comment>
+<Events><Event.Page>
+<Type>EVENT_EDITOR</Type>
+<Name>Event</Name>
+<Active>true</Active>
+<EventContent>
+<Comment><![CDATA[]]></Comment>
+<ZeroCondition><![CDATA[
+if(vy>0) return 1;
+return y;
+
+]]></ZeroCondition>
+<Tolerance><![CDATA[0.001]]></Tolerance>
+<Action><![CDATA[
+vy=Math.abs(vy)*CoefficientOfRestitution;
+]]></Action>
+<StopAtEvent>true</StopAtEvent>
+
+</EventContent>
+</Event.Page>
+</Events>
+
+</Content>
+</Osejs.Model.Evolution.Page>
+</Osejs.Model.Evolution>
+<Osejs.Model.Constraints>
+</Osejs.Model.Constraints>
+<Osejs.Model.Library>
+</Osejs.Model.Library>
+</Osejs.Model>
+<Osejs.View>
+<Osejs.View.Creation>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">drawingFrame</Property>
+<Property name="_ejs_mainWindow">true</Property>
+<Property name="title"><![CDATA["FallingBall3D"]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["194,152"]]></Property>
+<Property name="size"><![CDATA["300,474"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Display3DPanel</Type>
+<Property name="name">drawingPanel3D</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">center</Property>
+<Property name="minimumX"><![CDATA[-1.0]]></Property>
+<Property name="maximumX"><![CDATA[1.0]]></Property>
+<Property name="minimumY"><![CDATA[-.1]]></Property>
+<Property name="maximumY"><![CDATA[2]]></Property>
+<Property name="minimumZ"><![CDATA[-1]]></Property>
+<Property name="maximumZ"><![CDATA[1.0]]></Property>
+<Property name="cameraX"><![CDATA[-3.3707748431682125E-18]]></Property>
+<Property name="cameraY"><![CDATA[0.9499999999999996]]></Property>
+<Property name="cameraZ"><![CDATA[5.506969453953307]]></Property>
+<Property name="cameraAzimuth"><![CDATA[-1.57]]></Property>
+<Property name="cameraAltitude"><![CDATA[1.57]]></Property>
+<Property name="cameraFocusX"><![CDATA[0.0]]></Property>
+<Property name="cameraFocusY"><![CDATA[0.95]]></Property>
+<Property name="cameraFocusZ"><![CDATA[0.0]]></Property>
+<Property name="cameraRotation"><![CDATA[0.0]]></Property>
+<Property name="cameraDistanceToScreen"><![CDATA[5.25]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Box3D</Type>
+<Property name="name">Floor</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[-.1]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[2]]></Property>
+<Property name="sizeY"><![CDATA[0]]></Property>
+<Property name="sizeZ"><![CDATA[2]]></Property>
+<Property name="lineColor"><![CDATA[BLACK]]></Property>
+<Property name="fillColor"><![CDATA[WHITE]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Arrow3D</Type>
+<Property name="name">Vector</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="sizeX"><![CDATA[0]]></Property>
+<Property name="sizeY"><![CDATA[vy/10]]></Property>
+<Property name="sizeZ"><![CDATA[0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Sphere3D</Type>
+<Property name="name">Ball</Property>
+<Property name="parent">drawingPanel3D</Property>
+<Property name="x"><![CDATA[0]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="z"><![CDATA[0]]></Property>
+<Property name="radius"><![CDATA[.1]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">north</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">twoStateButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA[Play]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA[Pause]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton</Property>
+<Property name="parent">buttonsPanel</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Slider</Type>
+<Property name="name">Coefficient_of_Restitution</Property>
+<Property name="parent">drawingFrame</Property>
+<Property name="position">south</Property>
+<Property name="variable"><![CDATA[CoefficientOfRestitution]]></Property>
+<Property name="value"><![CDATA[0.86194]]></Property>
+<Property name="minimum"><![CDATA[0.0]]></Property>
+<Property name="maximum"><![CDATA[1.0]]></Property>
+<Property name="tooltip"><![CDATA["Coefficient of Restitution"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Time_vs__Velocity</Property>
+<Property name="title"><![CDATA[Frame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["525,350"]]></Property>
+<Property name="size"><![CDATA["450,359"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel</Property>
+<Property name="parent">Time_vs__Velocity</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Time vs. Velocity"]]></Property>
+<Property name="titleX"><![CDATA["Time"]]></Property>
+<Property name="titleY"><![CDATA["Velocity"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">plot</Property>
+<Property name="parent">plottingPanel</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[vy]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>true</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel2</Property>
+<Property name="parent">Time_vs__Velocity</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton2</Property>
+<Property name="parent">buttonsPanel2</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA[Play]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA[Pause]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton2</Property>
+<Property name="parent">buttonsPanel2</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">aField2</Property>
+<Property name="parent">buttonsPanel2</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Frame</Type>
+<Property name="name">Time_vs__Position</Property>
+<Property name="title"><![CDATA[Frame]]></Property>
+<Property name="layout"><![CDATA[border]]></Property>
+<Property name="visible"><![CDATA[true]]></Property>
+<Property name="location"><![CDATA["518,23"]]></Property>
+<Property name="size"><![CDATA["450,316"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.PlottingPanel</Type>
+<Property name="name">plottingPanel2</Property>
+<Property name="parent">Time_vs__Position</Property>
+<Property name="position">center</Property>
+<Property name="autoscaleX"><![CDATA[true]]></Property>
+<Property name="autoscaleY"><![CDATA[true]]></Property>
+<Property name="title"><![CDATA["Time vs. Position"]]></Property>
+<Property name="titleX"><![CDATA["Time"]]></Property>
+<Property name="titleY"><![CDATA["Position"]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Trace</Type>
+<Property name="name">plot2</Property>
+<Property name="parent">plottingPanel2</Property>
+<Property name="x"><![CDATA[t]]></Property>
+<Property name="y"><![CDATA[y]]></Property>
+<Property name="norepeat"><![CDATA[true]]></Property>
+<Property name="connected"><![CDATA[true]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Expanded>false</Expanded>
+<Type>Elements.Panel</Type>
+<Property name="name">buttonsPanel3</Property>
+<Property name="parent">Time_vs__Position</Property>
+<Property name="position">south</Property>
+<Property name="layout"><![CDATA[grid:1,0,0,0]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.TwoStateButton</Type>
+<Property name="name">startStopButton3</Property>
+<Property name="parent">buttonsPanel3</Property>
+<Property name="variable"><![CDATA[_isPaused]]></Property>
+<Property name="textOn"><![CDATA[Play]]></Property>
+<Property name="actionOn"><![CDATA[_play()]]></Property>
+<Property name="textOff"><![CDATA[Pause]]></Property>
+<Property name="actionOff"><![CDATA[_pause()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.Button</Type>
+<Property name="name">resetButton3</Property>
+<Property name="parent">buttonsPanel3</Property>
+<Property name="text"><![CDATA[Reset]]></Property>
+<Property name="action"><![CDATA[_reset()]]></Property>
+</Osejs.View.Creation.Element>
+<Osejs.View.Creation.Element>
+<Type>Elements.ParsedField</Type>
+<Property name="name">aField3</Property>
+<Property name="parent">buttonsPanel3</Property>
+<Property name="variable"><![CDATA[t]]></Property>
+</Osejs.View.Creation.Element>
+</Osejs.View.Creation>
+</Osejs.View>
+<Osejs.Experiment>
+</Osejs.Experiment>
+</Osejs>
