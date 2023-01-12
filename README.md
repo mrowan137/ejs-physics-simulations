@@ -3,36 +3,19 @@
 Collection of elementary physics examples made with EJS (Easy Java Simulations,
 v4.0).
 
-| Newton's first law                                                                             | Block sliding down a ramp                                                                | Projectile motion                                                                               |
-|:----------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/newton_first_law.gif)  | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/ramp.gif)        | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/projectile_motion.gif)  |
+| Newton's first law                                                                                | Block sliding down a ramp                                                                | Projectile motion                                                                               |
+|:-------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
+| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/newton_first_law_3d.gif)  | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/ramp.gif)        | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/projectile_motion.gif)  |
 
-| Elastic collision                                                                              | Bouncing ball                                                                            | Mass oscillating on a spring                                                                    |
-|:----------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/collision.gif)         | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/freefall_3d.gif) | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/spring.gif)             |
+| Elastic collision                                                                                 | Bouncing ball                                                                            | Mass oscillating on a spring                                                                    |
+|:-------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
+| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/collision.gif)            | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/freefall_3d.gif) | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/spring.gif)             |
 
-| Pendulum...                                                                                    | ... another pendulum                                                                     | ... yet another pendulum!                                                                       |
-|:----------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum1.gif)  | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum2.gif)          | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum3.gif)          |
+| Pendulum...                                                                                       | ... another pendulum                                                                     | ... yet another pendulum!                                                                       |
+|:-------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
+| ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum1.gif)            | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum2.gif)   | ![](https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum3.gif)          |
 
   
-<p align="center">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/newton_first_law.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/ramp.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/projectile_motion.gif">
-</p>
-<p align="center">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/collision.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/freefall_3d.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/spring.gif">
-</p>
-<p align="center">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum1.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum2.gif">
-  <img src="https://github.com/mrowan137/ejs-physics-simulations/blob/main/demo/pendulum3.gif">
-</p>
-
-
 ## Description
 
 This directory contains simulations of elementary mechanics systems:
