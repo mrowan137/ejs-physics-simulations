@@ -55,6 +55,4 @@ Michael E. Rowan — [mrowan137](https://github.com/mrowan137) — [michael@mrow
 
 ## References
 
-* [EJS Wiki](https://www.um.es/fem/EjsWiki/)
-
-
+* [EJS Modeling](https://www.compadre.org/osp/search/categories.cfm?t=Overview)
